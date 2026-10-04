@@ -823,9 +823,11 @@
       </div>
 
       <div class="form-card reveal" id="form-card">
-        <form name="apply" method="POST" action="https://formspree.io/f/mbdvnrqk" id="apply-form" novalidate>
+        <form name="apply" method="POST" action="https://formsubmit.co/peterdouglas32@gmail.com" id="apply-form" novalidate>
           <input type="hidden" name="_subject" value="New application from Elevate website">
-          <p class="bot-field" aria-hidden="true"><label>Don't fill this out if you're human: <input name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="bot-field" aria-hidden="true"><label>Don't fill this out if you're human: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label></p>
 
           <h3>Apply to Elevate</h3>
           <p class="sub">All fields are required unless marked optional.</p>
@@ -1017,7 +1019,7 @@
     new IntersectionObserver(function(en){ atForm = en[0].isIntersecting; setBar(); }, {threshold:0.05}).observe(apply);
   }
 
-  // Netlify form: AJAX submit with thank-you state
+  // FormSubmit: AJAX submit with thank-you state
   var form = document.getElementById('apply-form');
   var card = document.getElementById('form-card');
   var err = document.getElementById('form-error');
@@ -1038,8 +1040,13 @@
       return;
     }
     btn.disabled = true; btn.textContent = 'Sending…';
-    fetch('https://formspree.io/f/mbdvnrqk', {method:'POST', headers:{'Accept':'application/json'}, body:new FormData(form)})
-      .then(function(r){ if (!r.ok) throw new Error(r.status); 
+    var data = {};
+    new FormData(form).forEach(function(v, k){ data[k] = v; });
+    data._replyto = data.email;
+    fetch('https://formsubmit.co/ajax/peterdouglas32@gmail.com', {method:'POST', headers:{'Content-Type':'application/json', 'Accept':'application/json'}, body:JSON.stringify(data)})
+      .then(function(r){ if (!r.ok) throw new Error(r.status); return r.json().catch(function(){ return {}; }); })
+      .then(function(res){
+        if (res && (res.success === false || res.success === 'false') && !/activat/i.test(res.message || '')) throw new Error(res.message || 'failed');
         card.classList.add('done');
         var t = document.getElementById('thanks');
         card.scrollIntoView({behavior:'smooth', block:'center'});
