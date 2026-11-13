@@ -163,6 +163,10 @@
     .prize-copy .l { display: block; color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; margin-bottom: 4px; }
     .prize-copy p { margin: 0; font-size: 1.02rem; font-weight: 700; line-height: 1.35; }
     .prize-copy strong { color: #F0D063; }
+    .bfast { display: flex; align-items: center; gap: 9px; margin: -4px 0 18px; padding: 11px 12px 11px 9px; border-radius: 999px; background: linear-gradient(100deg, rgba(201,162,39,.20), rgba(201,162,39,.06)); border: 1px solid rgba(201,162,39,.6); font-weight: 700; font-size: .92rem; line-height: 1.25; letter-spacing: -.01em; }
+    .bfast svg { width: 20px; height: 20px; flex: none; color: #F0D063; }
+    .bfast .tag { flex: none; font-size: 10px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #0A0A0A; background: var(--gold); border-radius: 999px; padding: 4px 9px; }
+    @media (max-width: 400px) { .bfast .tag { display: none; } .bfast { padding-left: 14px; font-size: .96rem; } }
     #form-card { border-top: 2px solid var(--gold); }
     form h2, #thanks h2 {
       margin: 0 0 6px;
@@ -374,6 +378,8 @@
         </div>
       </div>
     </section>
+
+    <p class="bfast"><span class="tag">Plus</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9h12v5a5 5 0 0 1-5 5H9a5 5 0 0 1-5-5z"/><path d="M16 10.5h1.5a2.5 2.5 0 0 1 0 5H16"/><path d="M8 3.5c-.8 1 .8 2 0 3M12 3.5c-.8 1 .8 2 0 3"/></svg><span>Chick-fil-A breakfast will be served</span></p>
 
     <section class="prize" aria-label="Prize">
       <div class="badge" aria-hidden="true"><div><div class="m">$100</div><div class="o">OR</div><div class="s">New shoes</div></div></div>
