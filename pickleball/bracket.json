@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T08:01:48-07:00",
+  "updated": "2026-11-14T08:52:32-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -44,6 +44,10 @@
     {
       "name": "Uri & Sergio",
       "players": "Uri Garcia & Sergio Baron"
+    },
+    {
+      "name": "💅💅",
+      "players": "Claire Cowden & Dayana Bernal"
     }
   ],
   "scores": {},
@@ -97,46 +101,53 @@
       "id": "w5"
     },
     {
+      "a": "Uri & Sergio",
+      "b": "💅💅",
+      "slot": 1,
+      "court": 6,
+      "id": "w6"
+    },
+    {
       "a": "Singing Pigeons",
       "b": "Chi-Town Chads",
       "slot": 2,
       "court": 1,
-      "id": "w6"
+      "id": "w7"
     },
     {
       "a": "Mogfathers",
       "b": "The Pickle Ticklers",
       "slot": 2,
       "court": 2,
-      "id": "w7"
+      "id": "w8"
     },
     {
       "a": "LYTDK",
       "b": "The Queens",
       "slot": 2,
       "court": 3,
-      "id": "w8"
+      "id": "w9"
     },
     {
       "a": "Pickle me Elmo",
       "b": "TNT",
       "slot": 2,
       "court": 4,
-      "id": "w9"
+      "id": "w10"
     },
     {
       "a": "Israeli Defense Force",
       "b": "Uri & Sergio",
       "slot": 2,
       "court": 5,
-      "id": "w10"
+      "id": "w11"
     },
     {
-      "a": "Uri & Sergio",
+      "a": "💅💅",
       "b": "The Morris'",
-      "slot": 3,
-      "court": 1,
-      "id": "w11"
+      "slot": 2,
+      "court": 6,
+      "id": "w12"
     }
   ]
 }
