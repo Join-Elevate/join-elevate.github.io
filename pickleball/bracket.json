@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T08:54:13-07:00",
+  "updated": "2026-11-14T09:29:07-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -52,6 +52,10 @@
     {
       "name": "Alaska Airlines",
       "players": "Victor Soria & Nyah Edenshaw"
+    },
+    {
+      "name": "Isaac & Peter",
+      "players": "Isaac Douglas & Peter Douglas"
     }
   ],
   "scores": {},
@@ -112,53 +116,60 @@
       "id": "w6"
     },
     {
+      "a": "Alaska Airlines",
+      "b": "Isaac & Peter",
+      "slot": 1,
+      "court": 10,
+      "id": "w7"
+    },
+    {
       "a": "Singing Pigeons",
       "b": "Chi-Town Chads",
       "slot": 2,
       "court": 4,
-      "id": "w7"
+      "id": "w8"
     },
     {
       "a": "Mogfathers",
       "b": "The Pickle Ticklers",
       "slot": 2,
       "court": 5,
-      "id": "w8"
+      "id": "w9"
     },
     {
       "a": "LYTDK",
       "b": "The Queens",
       "slot": 2,
       "court": 6,
-      "id": "w9"
+      "id": "w10"
     },
     {
       "a": "Pickle me Elmo",
       "b": "TNT",
       "slot": 2,
       "court": 7,
-      "id": "w10"
+      "id": "w11"
     },
     {
       "a": "Israeli Defense Force",
       "b": "Uri & Sergio",
       "slot": 2,
       "court": 8,
-      "id": "w11"
+      "id": "w12"
     },
     {
       "a": "💅💅",
       "b": "Alaska Airlines",
       "slot": 2,
       "court": 9,
-      "id": "w12"
+      "id": "w13"
     },
     {
-      "a": "Alaska Airlines",
+      "a": "Isaac & Peter",
       "b": "The Morris'",
-      "slot": 3,
-      "court": 4,
-      "id": "w13"
+      "slot": 2,
+      "court": 10,
+      "id": "w14"
     }
   ]
 }
