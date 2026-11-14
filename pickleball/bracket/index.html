@@ -300,7 +300,7 @@
       if (t.bye) cls += ' bye';
       if (m.w && m.w === t && !t.bye) cls += ' win';
       else if (m.state === 'done') cls += ' lose';
-      if (m.state === 'done' && Array.isArray(m.sc)) score = m.sc[side];
+      if (m.state === 'done' && Array.isArray(m.sc)) score = (Math.max(m.sc[0], m.sc[1]) === 1) ? (m.sc[side] === 1 ? 'W' : '') : m.sc[side];
       var name = t.tbd ? 'TBD' : t.bye ? 'BYE' : esc(t.name);
       return '<div class="' + cls + '"><span class="seed">' + (t.seed || '') + '</span><span class="nm"><b>' + name + '</b>' +
         (t.players ? '<small>' + esc(t.players) + '</small>' : '') + '</span><span class="sc">' + score + '</span></div>';
