@@ -1,5 +1,63 @@
 {
-  "updated": "2026-11-13T17:24:47-07:00",
-  "teams": [],
-  "scores": {}
+  "updated": "2026-11-14T08:01:48-07:00",
+  "teams": [
+    {
+      "name": "The Morris'",
+      "players": "Brock & Quincee"
+    },
+    {
+      "name": "Singing Pigeons",
+      "players": "Grady Barnes & Kevin Alvarado"
+    },
+    {
+      "name": "Chi-Town Chads",
+      "players": "Dawid Szeliga & Evan Bianco"
+    },
+    {
+      "name": "Mogfathers",
+      "players": "Patrick Zupic & Boston Fitch"
+    },
+    {
+      "name": "The Pickle Ticklers",
+      "players": "Emil Hales & Gavin Warner"
+    },
+    {
+      "name": "LYTDK",
+      "players": "Jeron Odden & Zackary Cheney"
+    },
+    {
+      "name": "The Queens",
+      "players": "Israel Reyna & Jacob Cole"
+    },
+    {
+      "name": "Pickle me Elmo",
+      "players": "Eli Wood & Andrew Atkinson"
+    },
+    {
+      "name": "TNT",
+      "players": "Trevis Leiser & Tristen Wood"
+    },
+    {
+      "name": "Israeli Defense Force",
+      "players": "Erick Tropets & Jake Tropets"
+    },
+    {
+      "name": "Uri & Sergio",
+      "players": "Uri Garcia & Sergio Baron"
+    }
+  ],
+  "scores": {},
+  "signup_order": [
+    "The Morris'",
+    "Singing Pigeons",
+    "Chi-Town Chads",
+    "Mogfathers",
+    "The Pickle Ticklers",
+    "LYTDK",
+    "The Queens",
+    "Pickle me Elmo",
+    "TNT",
+    "Israeli Defense Force",
+    "Uri & Sergio"
+  ]
 }
