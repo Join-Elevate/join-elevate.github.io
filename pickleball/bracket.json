@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T10:20:32-07:00",
+  "updated": "2026-11-14T10:21:19-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -54,7 +54,7 @@
       "players": "Victor Soria & Nyah Edenshaw"
     },
     {
-      "name": "Isaac & Peter",
+      "name": "Carson & Isaac",
       "players": "Isaac Douglas & Peter Douglas"
     },
     {
@@ -102,6 +102,10 @@
     "r3m3": [
       1,
       0
+    ],
+    "r2m7": [
+      0,
+      1
     ]
   },
   "signup_order": [
