@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T10:07:05-07:00",
+  "updated": "2026-11-14T10:07:51-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -66,7 +66,12 @@
       "players": "Omari & Gabrielly"
     }
   ],
-  "scores": {},
+  "scores": {
+    "r2m6": [
+      1,
+      0
+    ]
+  },
   "signup_order": [
     "The Morris'",
     "Singing Pigeons",
