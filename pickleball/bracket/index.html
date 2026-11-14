@@ -362,8 +362,11 @@
       renderWarmups(data);
       var res = compute(data);
       var html = '';
+      var skip = {}, firstShown = -1;
+      res.rounds.forEach(function (ms, r) { if (!res.empty && ms.every(function (m) { return m.state === 'bye'; })) skip[r] = true; else if (firstShown < 0) firstShown = r; });
       res.rounds.forEach(function (ms, r) {
-        var cls = 'round' + (r === 0 ? ' first' : '') + (r === ROUNDS.length - 1 ? ' last' : '');
+        if (skip[r]) return;
+        var cls = 'round' + (r === firstShown ? ' first' : '') + (r === ROUNDS.length - 1 ? ' last' : '');
         var live = ms.filter(function (m) { return m.state !== 'bye'; }).length;
         html += '<section class="' + cls + '" data-r="' + r + '" aria-label="' + ROUNDS[r].name + '"><div class="round-h"><b>' + ROUNDS[r].name + '</b><span>' + (r === ROUNDS.length - 1 ? '1 match' : live + ' match' + (live === 1 ? '' : 'es')) + '</span></div><div class="round-body">';
         if (ms.length === 1) html += '<div class="pair">' + matchBox(ms[0], r) + '</div>';
@@ -379,7 +382,7 @@
       brEl.innerHTML = html;
 
       var labels = ROUNDS.map(function (r) { return r.short; }).concat(['Champ']);
-      tabsEl.innerHTML = labels.map(function (l, i) { return '<button class="tab" role="tab" data-r="' + i + '" aria-selected="false">' + l + '</button>'; }).join('');
+      tabsEl.innerHTML = labels.map(function (l, i) { if (skip[i]) return ''; return '<button class="tab" role="tab" data-r="' + i + '" aria-selected="false">' + l + '</button>'; }).join('');
 
       document.getElementById('banner').hidden = !res.empty;
       var status = document.getElementById('status');
@@ -391,7 +394,7 @@
       }
 
       // Pick the active round: first round with a match waiting on a score.
-      var active = 0;
+      var active = firstShown < 0 ? 0 : firstShown;
       if (has) active = 5;
       else for (var r = 0; r < res.rounds.length; r++) { if (res.rounds[r].some(function (m) { return m.state === 'ready'; })) { active = r; break; } }
       setActive(firstRender ? active : currentTab, firstRender);
@@ -408,7 +411,7 @@
     window.addEventListener('resize', function () { if (mobile()) { var col = brEl.querySelector('[data-r="' + currentTab + '"]'); if (col) brEl.scrollLeft = col.offsetLeft - 20; } fitHeight(); });
     function setActive(i, scroll) {
       currentTab = i;
-      [].forEach.call(tabsEl.children, function (b, j) { b.setAttribute('aria-selected', j === i ? 'true' : 'false'); if (j === i && b.scrollIntoView && scroll) b.scrollIntoView({ inline: 'center', block: 'nearest' }); });
+      [].forEach.call(tabsEl.children, function (b, j) { b.setAttribute('aria-selected', +b.dataset.r === i ? 'true' : 'false'); if (+b.dataset.r === i && b.scrollIntoView && scroll) b.scrollIntoView({ inline: 'center', block: 'nearest' }); });
       if (scroll && mobile()) { var col = brEl.querySelector('[data-r="' + i + '"]'); if (col) brEl.scrollLeft = col.offsetLeft - 20; }
       fitHeight();
     }
