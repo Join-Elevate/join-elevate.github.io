@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T09:29:07-07:00",
+  "updated": "2026-11-14T09:29:11-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -56,6 +56,10 @@
     {
       "name": "Isaac & Peter",
       "players": "Isaac Douglas & Peter Douglas"
+    },
+    {
+      "name": "Mogfathers 2",
+      "players": "True Adam AB & Avery Bourgeois"
     }
   ],
   "scores": {},
@@ -166,10 +170,17 @@
     },
     {
       "a": "Isaac & Peter",
-      "b": "The Morris'",
+      "b": "Mogfathers 2",
       "slot": 2,
       "court": 10,
       "id": "w14"
+    },
+    {
+      "a": "Mogfathers 2",
+      "b": "The Morris'",
+      "slot": 3,
+      "court": 4,
+      "id": "w15"
     }
   ]
 }
