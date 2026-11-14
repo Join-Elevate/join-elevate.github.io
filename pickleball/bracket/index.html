@@ -307,7 +307,7 @@
     }
     function matchBox(m, r) {
       var st = m.state === 'done' ? 'Final' : m.state === 'ready' ? 'Up next' : m.state === 'bye' ? 'Bye' : '';
-      return '<div class="slot"><div class="match ' + m.state + '" id="' + m.id + '"><div class="mlabel"><span>' + ROUNDS[r].short + ' · M' + m.num + '</span><span class="st">' + st + '</span></div>' +
+      return '<div class="slot"><div class="match ' + m.state + '" id="' + m.id + '"><div class="mlabel"><span>' + ROUNDS[r].short + ' · M' + m.num + '</span><span class="st">' + (COURTS[m.id] && m.state !== 'done' && m.state !== 'bye' ? '<b style="color:#F0D063">Court ' + COURTS[m.id] + '</b> · ' : '') + st + '</span></div>' +
         teamRow(m.a, m, 0) + teamRow(m.b, m, 1) + '</div></div>';
     }
 
@@ -358,7 +358,9 @@
     var brEl = document.getElementById('bracket');
     var firstRender = true;
 
+    var COURTS = {};
     function render(data) {
+      COURTS = data.courts || {};
       renderWarmups(data);
       var res = compute(data);
       var html = '';
