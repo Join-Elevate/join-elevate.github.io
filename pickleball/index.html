@@ -167,6 +167,12 @@
     .bfast svg { width: 20px; height: 20px; flex: none; color: #F0D063; }
     .bfast .tag { flex: none; font-size: 10px; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: #0A0A0A; background: var(--gold); border-radius: 999px; padding: 4px 9px; }
     @media (max-width: 400px) { .bfast .tag { display: none; } .bfast { padding-left: 14px; font-size: .96rem; } }
+    .bracket-link { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 22px; padding: 12px 14px 12px 18px; min-height: 56px; border-radius: 16px; border: 1px solid rgba(201,162,39,.55); background: linear-gradient(100deg, rgba(201,162,39,.16), rgba(201,162,39,.04)); color: var(--text); text-decoration: none; }
+    .bracket-link b { display: block; font-family: var(--display); font-weight: 400; font-size: 1.3rem; line-height: 1; text-transform: uppercase; letter-spacing: .03em; }
+    .bracket-link small { display: block; color: var(--muted); font-size: .82rem; margin-top: 3px; }
+    .bracket-link .go { flex: none; display: grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--gold-grad); color: #0A0A0A; font-weight: 800; }
+    .bracket-link:hover { border-color: var(--gold); }
+    .again + .again { margin-left: 4px; }
     #form-card { border-top: 2px solid var(--gold); }
     form h2, #thanks h2 {
       margin: 0 0 6px;
@@ -354,6 +360,7 @@
     <p class="kicker">Elevate · Doubles</p>
     <h1 class="title"><span class="a">Pickleball</span><span class="b">Tournament</span></h1>
     <p class="lede">Grab a partner, register your team, and play tomorrow morning. Single elimination. Games to 11.</p>
+    <a class="bracket-link" href="bracket/"><span><b>View bracket</b><small>Live matchups and scores, posted at check-in</small></span><span class="go" aria-hidden="true">→</span></a>
 
     <section class="card facts" aria-label="Event details">
       <div class="fact">
@@ -449,6 +456,7 @@
       </div>
       <h2>You’re registered.</h2>
       <p>We’ll see you Saturday, November 14, 9:00–11:00 AM MT at Pickleball USA, 1330 Sandhill Rd, Orem. Bring a paddle if you have one.</p>
+      <a class="again" href="bracket/">View bracket →</a>
       <a class="again" href="./">Register another team</a>
     </section>
 
