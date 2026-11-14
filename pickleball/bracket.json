@@ -59,5 +59,84 @@
     "TNT",
     "Israeli Defense Force",
     "Uri & Sergio"
+  ],
+  "warmups": [
+    {
+      "a": "The Morris'",
+      "b": "Singing Pigeons",
+      "slot": 1,
+      "court": 1,
+      "id": "w1"
+    },
+    {
+      "a": "Chi-Town Chads",
+      "b": "Mogfathers",
+      "slot": 1,
+      "court": 2,
+      "id": "w2"
+    },
+    {
+      "a": "The Pickle Ticklers",
+      "b": "LYTDK",
+      "slot": 1,
+      "court": 3,
+      "id": "w3"
+    },
+    {
+      "a": "The Queens",
+      "b": "Pickle me Elmo",
+      "slot": 1,
+      "court": 4,
+      "id": "w4"
+    },
+    {
+      "a": "TNT",
+      "b": "Israeli Defense Force",
+      "slot": 1,
+      "court": 5,
+      "id": "w5"
+    },
+    {
+      "a": "Singing Pigeons",
+      "b": "Chi-Town Chads",
+      "slot": 2,
+      "court": 1,
+      "id": "w6"
+    },
+    {
+      "a": "Mogfathers",
+      "b": "The Pickle Ticklers",
+      "slot": 2,
+      "court": 2,
+      "id": "w7"
+    },
+    {
+      "a": "LYTDK",
+      "b": "The Queens",
+      "slot": 2,
+      "court": 3,
+      "id": "w8"
+    },
+    {
+      "a": "Pickle me Elmo",
+      "b": "TNT",
+      "slot": 2,
+      "court": 4,
+      "id": "w9"
+    },
+    {
+      "a": "Israeli Defense Force",
+      "b": "Uri & Sergio",
+      "slot": 2,
+      "court": 5,
+      "id": "w10"
+    },
+    {
+      "a": "Uri & Sergio",
+      "b": "The Morris'",
+      "slot": 3,
+      "court": 1,
+      "id": "w11"
+    }
   ]
 }
