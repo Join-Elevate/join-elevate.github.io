@@ -71,6 +71,47 @@
     .banner span { display: block; color: var(--muted); font-size: .9rem; margin-top: 4px; }
     .banner[hidden] { display: none; }
 
+    /* Warm-up */
+    .wu { margin: 0 0 26px; }
+    .sec-h { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 12px; }
+    .sec-h h2 { margin: 0; font-family: var(--display); font-weight: 400; font-size: 2rem; line-height: 1; text-transform: uppercase; letter-spacing: .01em; }
+    .sec-h h2 em { font-style: normal; background: var(--gold-grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .sec-h span { color: var(--gold); font-size: 11px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; white-space: nowrap; }
+    .wu-note { color: var(--muted); font-size: .88rem; margin: -4px 0 14px; }
+    .wu-grid { display: grid; gap: 14px; align-items: start; }
+    @media (min-width: 900px) { .wu-grid { grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); } }
+    .wslot { border-radius: 18px; border: 1px solid var(--line); background: rgba(20,20,20,.94); overflow: hidden; }
+    .wslot.now { border-color: rgba(201,162,39,.6); box-shadow: 0 0 24px rgba(201,162,39,.08); }
+    .wslot-h { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; background: linear-gradient(100deg, rgba(201,162,39,.16), rgba(201,162,39,.02)); border-bottom: 1px solid var(--line); }
+    .wslot-h b { font-family: var(--display); font-weight: 400; font-size: 1.25rem; text-transform: uppercase; letter-spacing: .03em; }
+    .wslot-h span { font-size: 10px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); }
+    .wg { display: grid; grid-template-columns: 48px 1fr; align-items: stretch; border-top: 1px solid var(--line); }
+    .wg:first-of-type { border-top: 0; }
+    .court-no { display: flex; flex-direction: column; align-items: center; justify-content: center; border-right: 1px solid var(--line); color: var(--gold); }
+    .court-no small { font-size: 8.5px; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; opacity: .85; }
+    .court-no b { font-family: var(--display); font-weight: 400; font-size: 1.5rem; line-height: 1; color: #F0D063; }
+    .wteams { min-width: 0; }
+    .wt { display: flex; align-items: center; gap: 8px; padding: 7px 12px; min-height: 38px; }
+    .wt + .wt { border-top: 1px dashed rgba(255,255,255,.06); }
+    .wt .nm b { font-size: .9rem; }
+    .wt.win { background: linear-gradient(90deg, rgba(201,162,39,.14), rgba(201,162,39,0)); }
+    .wt.win .sc { color: var(--gold-hi); }
+    .wt.lose .nm b, .wt.lose .sc { opacity: .5; }
+    .wid { font-size: 9.5px; font-weight: 800; letter-spacing: .12em; color: #6B6B72; text-transform: uppercase; }
+    .bonus { display: inline-block; margin-left: 6px; padding: 1px 6px; border-radius: 999px; border: 1px solid var(--gold-line); color: var(--gold); font-size: 9px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; vertical-align: 2px; }
+    details.stand { margin-top: 14px; border-radius: 16px; border: 1px solid var(--line); background: rgba(20,20,20,.94); }
+    details.stand summary { cursor: pointer; list-style: none; padding: 13px 16px; font-weight: 800; font-size: 12px; letter-spacing: .16em; text-transform: uppercase; color: #E9C85A; display: flex; justify-content: space-between; }
+    details.stand summary::-webkit-details-marker { display: none; }
+    details.stand summary::after { content: "+"; font-size: 16px; line-height: 1; }
+    details.stand[open] summary::after { content: "–"; }
+    .stand table { width: 100%; border-collapse: collapse; font-size: .88rem; }
+    .stand th { text-align: left; color: var(--muted); font-size: 10px; letter-spacing: .14em; text-transform: uppercase; font-weight: 800; padding: 6px 10px; }
+    .stand td { padding: 8px 10px; border-top: 1px solid var(--line); }
+    .stand td.n { text-align: right; font-variant-numeric: tabular-nums; }
+    .stand th.n { text-align: right; }
+    .stand td.rk { color: var(--gold); font-weight: 800; width: 28px; }
+    .bk-h { margin-top: 4px; }
+
     /* Tabs (mobile) */
     .tabs { display: flex; gap: 6px; overflow-x: auto; scrollbar-width: none; margin: 0 -20px 14px; padding: 2px 20px; position: sticky; top: 0; z-index: 5; background: linear-gradient(180deg, #0A0A0A 75%, rgba(10,10,10,0)); padding-top: 10px; padding-bottom: 10px; }
     .tabs::-webkit-scrollbar { display: none; }
@@ -177,6 +218,14 @@
       <div><b>Bracket drops at check-in, 9:00 AM</b><span>Seeds and matchups post here as teams check in. Games to 11, win by 2.</span></div>
     </div>
 
+    <section class="wu" id="wu" hidden>
+      <div class="sec-h"><h2>Warm-Up <em>Round</em></h2><span id="wu-count"></span></div>
+      <p class="wu-note" id="wu-note">Every team plays 2 warm-up games on courts 1–8 before the bracket. Games to 11.</p>
+      <div class="wu-grid" id="wu-grid"></div>
+      <details class="stand" id="wu-stand"><summary>Warm-up standings</summary><table><thead><tr><th>#</th><th>Team</th><th class="n">W-L</th><th class="n">PD</th></tr></thead><tbody id="wu-body"></tbody></table></details>
+    </section>
+
+    <div class="sec-h bk-h" id="bk-h"><h2>Elimination <em>Bracket</em></h2><span id="seed-note"></span></div>
     <nav class="tabs" id="tabs" role="tablist" aria-label="Rounds"></nav>
     <div class="bracket" id="bracket" aria-live="polite"></div>
 
@@ -262,11 +311,55 @@
         teamRow(m.a, m, 0) + teamRow(m.b, m, 1) + '</div></div>';
     }
 
+
+    function renderWarmups(data) {
+      var ws = data.warmups || [], wrap = document.getElementById('wu');
+      wrap.hidden = !ws.length;
+      var teams = (data.teams || []).map(norm), info = {};
+      teams.forEach(function (t) { info[t.name] = t; });
+      var sn = document.getElementById('seed-note');
+      sn.textContent = teams.length ? (data.seeded_by === 'warmups' ? 'Seeded by warm-up results' : 'Seeded by sign-up order') : '';
+      if (!ws.length) return;
+      var slots = {}, played = 0;
+      ws.forEach(function (g) { (slots[g.slot] = slots[g.slot] || []).push(g); if (g.score) played++; });
+      var keys = Object.keys(slots).map(Number).sort(function (a, b) { return a - b; });
+      var nowSlot = null;
+      keys.forEach(function (k) { if (nowSlot === null && slots[k].some(function (g) { return !g.score; })) nowSlot = k; });
+      document.getElementById('wu-count').textContent = ws.length + ' games · ' + keys.length + ' slot' + (keys.length === 1 ? '' : 's');
+      function row(g, side) {
+        var nm = side ? g.b : g.a, t = info[nm] || {}, cls = 'wt';
+        if (g.score) cls += (g.score[side] > g.score[1 - side]) ? ' win' : ' lose';
+        return '<div class="' + cls + '"><span class="nm"><b>' + esc(nm) + (g.bonus === nm ? '<span class="bonus">Bonus</span>' : '') + '</b>' + (t.players ? '<small>' + esc(t.players) + '</small>' : '') + '</span><span class="sc">' + (g.score ? g.score[side] : '') + '</span></div>';
+      }
+      document.getElementById('wu-grid').innerHTML = keys.map(function (k) {
+        var gs = slots[k].sort(function (a, b) { return a.court - b.court; });
+        var done = gs.every(function (g) { return g.score; });
+        return '<div class="wslot' + (k === nowSlot ? ' now' : '') + '"><div class="wslot-h"><b>Slot ' + k + '</b><span>' + (done ? 'Final' : k === nowSlot ? 'On court now' : gs.length + ' game' + (gs.length === 1 ? '' : 's')) + '</span></div>' +
+          gs.map(function (g) { return '<div class="wg"><div class="court-no"><small>Court</small><b>' + g.court + '</b><span class="wid">' + esc(g.id || '') + '</span></div>'<div class="wteams">' + row(g, 0) + row(g, 1) + '</div></div>'; }).join('') + '</div>';
+      }).join('');
+      var hasBonus = ws.some(function (g) { return g.bonus; });
+      document.getElementById('wu-note').textContent = 'Every team plays 2 warm-up games on courts 1–8 before the bracket. Games to 11.' + (hasBonus ? ' “Bonus” = extra game that doesn’t count for that team.' : '');
+      // standings
+      var st = {};
+      teams.forEach(function (t, i) { st[t.name] = { n: t.name, i: i, w: 0, l: 0, pf: 0, pa: 0 }; });
+      ws.forEach(function (g) {
+        if (!g.score) return;
+        [[g.a, 0], [g.b, 1]].forEach(function (p) {
+          var r = st[p[0]]; if (!r || g.bonus === p[0]) return;
+          var m = g.score[p[1]], o = g.score[1 - p[1]];
+          r.pf += m; r.pa += o; if (m > o) r.w++; else r.l++;
+        });
+      });
+      var rows = Object.keys(st).map(function (k) { return st[k]; }).sort(function (a, b) { return (b.w - a.w) || ((b.pf - b.pa) - (a.pf - a.pa)) || (b.pf - a.pf) || (a.i - b.i); });
+      document.getElementById('wu-stand').hidden = !played;
+      document.getElementById('wu-body').innerHTML = rows.map(function (r, i) { var pd = r.pf - r.pa; return '<tr><td class="rk">' + (i + 1) + '</td><td>' + esc(r.n) + '</td><td class="n">' + r.w + '-' + r.l + '</td><td class="n">' + (pd > 0 ? '+' : '') + pd + '</td></tr>'; }).join('');
+    }
     var tabsEl = document.getElementById('tabs');
     var brEl = document.getElementById('bracket');
     var firstRender = true;
 
     function render(data) {
+      renderWarmups(data);
       var res = compute(data);
       var html = '';
       res.rounds.forEach(function (ms, r) {
