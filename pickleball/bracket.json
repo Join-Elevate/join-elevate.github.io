@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T08:52:32-07:00",
+  "updated": "2026-11-14T08:52:35-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -48,6 +48,10 @@
     {
       "name": "💅💅",
       "players": "Claire Cowden & Dayana Bernal"
+    },
+    {
+      "name": "Alaska Airlines",
+      "players": "Victor Soria & Nyah Edenshaw"
     }
   ],
   "scores": {},
@@ -144,10 +148,17 @@
     },
     {
       "a": "💅💅",
-      "b": "The Morris'",
+      "b": "Alaska Airlines",
       "slot": 2,
       "court": 6,
       "id": "w12"
+    },
+    {
+      "a": "Alaska Airlines",
+      "b": "The Morris'",
+      "slot": 3,
+      "court": 1,
+      "id": "w13"
     }
   ]
 }
