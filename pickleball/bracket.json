@@ -1,5 +1,5 @@
 {
-  "updated": "2026-11-14T08:52:35-07:00",
+  "updated": "2026-11-14T08:54:13-07:00",
   "teams": [
     {
       "name": "The Morris'",
@@ -73,91 +73,91 @@
       "a": "The Morris'",
       "b": "Singing Pigeons",
       "slot": 1,
-      "court": 1,
+      "court": 4,
       "id": "w1"
     },
     {
       "a": "Chi-Town Chads",
       "b": "Mogfathers",
       "slot": 1,
-      "court": 2,
+      "court": 5,
       "id": "w2"
     },
     {
       "a": "The Pickle Ticklers",
       "b": "LYTDK",
       "slot": 1,
-      "court": 3,
+      "court": 6,
       "id": "w3"
     },
     {
       "a": "The Queens",
       "b": "Pickle me Elmo",
       "slot": 1,
-      "court": 4,
+      "court": 7,
       "id": "w4"
     },
     {
       "a": "TNT",
       "b": "Israeli Defense Force",
       "slot": 1,
-      "court": 5,
+      "court": 8,
       "id": "w5"
     },
     {
       "a": "Uri & Sergio",
       "b": "💅💅",
       "slot": 1,
-      "court": 6,
+      "court": 9,
       "id": "w6"
     },
     {
       "a": "Singing Pigeons",
       "b": "Chi-Town Chads",
       "slot": 2,
-      "court": 1,
+      "court": 4,
       "id": "w7"
     },
     {
       "a": "Mogfathers",
       "b": "The Pickle Ticklers",
       "slot": 2,
-      "court": 2,
+      "court": 5,
       "id": "w8"
     },
     {
       "a": "LYTDK",
       "b": "The Queens",
       "slot": 2,
-      "court": 3,
+      "court": 6,
       "id": "w9"
     },
     {
       "a": "Pickle me Elmo",
       "b": "TNT",
       "slot": 2,
-      "court": 4,
+      "court": 7,
       "id": "w10"
     },
     {
       "a": "Israeli Defense Force",
       "b": "Uri & Sergio",
       "slot": 2,
-      "court": 5,
+      "court": 8,
       "id": "w11"
     },
     {
       "a": "💅💅",
       "b": "Alaska Airlines",
       "slot": 2,
-      "court": 6,
+      "court": 9,
       "id": "w12"
     },
     {
       "a": "Alaska Airlines",
       "b": "The Morris'",
       "slot": 3,
-      "court": 1,
+      "court": 4,
       "id": "w13"
     }
   ]
