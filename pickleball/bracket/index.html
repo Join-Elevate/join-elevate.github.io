@@ -335,7 +335,7 @@
         var gs = slots[k].sort(function (a, b) { return a.court - b.court; });
         var done = gs.every(function (g) { return g.score; });
         return '<div class="wslot' + (k === nowSlot ? ' now' : '') + '"><div class="wslot-h"><b>Slot ' + k + '</b><span>' + (done ? 'Final' : k === nowSlot ? 'On court now' : gs.length + ' game' + (gs.length === 1 ? '' : 's')) + '</span></div>' +
-          gs.map(function (g) { return '<div class="wg"><div class="court-no"><small>Court</small><b>' + g.court + '</b><span class="wid">' + esc(g.id || '') + '</span></div>'<div class="wteams">' + row(g, 0) + row(g, 1) + '</div></div>'; }).join('') + '</div>';
+          gs.map(function (g) { return '<div class="wg"><div class="court-no"><small>Court</small><b>' + g.court + '</b><span class="wid">' + esc(g.id || '') + '</span></div><div class="wteams">' + row(g, 0) + row(g, 1) + '</div></div>'; }).join('') + '</div>';
       }).join('');
       var hasBonus = ws.some(function (g) { return g.bonus; });
       document.getElementById('wu-note').textContent = 'Every team plays 2 warm-up games on courts 1–8 before the bracket. Games to 11.' + (hasBonus ? ' “Bonus” = extra game that doesn’t count for that team.' : '');
